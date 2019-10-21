@@ -1,0 +1,4 @@
+const concertKey = `YOUR KEY`;
+const restaurantKey = `YOUR KEY`;
+const meetupKey = `YOUR KEY`;
+const parkKey = `YOUR KEY`;
