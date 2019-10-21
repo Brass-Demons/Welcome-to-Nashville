@@ -1,4 +1,4 @@
-const concertKey = `YOUR KEY HERE`;
-const restaurantKey = `YOUR KEY HERE`;
-const meetupKey = `YOUR KEY HERE`;
-const parkKey = `YOUR KEY HERE`;
+const concertKey = `YOUR KEY`;
+const restaurantKey = `YOUR KEY`;
+const meetupKey = `YOUR KEY`;
+const parkKey = `YOUR KEY`;
