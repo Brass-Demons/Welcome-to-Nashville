@@ -17,7 +17,8 @@ Please delete options that are not relevant.
 
 Please describe the tests required to verify your changes. Provide instructions so PR Tester can check functionality. Please also list any relevant details for your tests
 
-
+- Pull down the feature branch with `git fetch -all`.
+- Checkout into the branch to review the feature on your local server.
 
 # Checklist:
 
