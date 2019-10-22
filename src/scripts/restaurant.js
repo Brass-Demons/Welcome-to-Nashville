@@ -24,29 +24,26 @@ const createResultsComponent = (name, address, id) => {
 	`;
 };
 
-// const addEventToSaveButton = (name, id) => {
-// 	const button = document.getElementById(id);
-// 	button.addEventListener("click", () => document.getElementById("restaurant-itinerary").innerHTML = name);
-// };
-
 const addEventToSaveButtons = buttonArr => {
 	buttonArr.forEach(button => {
-		console.log(button.parentElement)
+		const restaurantName = button.parentElement.innerHTML.split('n>')[1].split(':')[0];
 		
-		button.addEventListener("click", () => document.getElementById("restaurant-itinerary").innerHTML = name);
+		button.addEventListener("click", () => document.getElementById("restaurant-itinerary").innerHTML = restaurantName);
 	});
 };
 
 const renderResults = restaurants => {
 	const resultsList = document.querySelector("ol");
+	let resultsHTML = '';
 
 	restaurants.forEach(restaurantObj => {
 		const { name, id } = restaurantObj.restaurant;
 		const { address } = restaurantObj.restaurant.location;
-
-		resultsList.innerHTML += createResultsComponent(name, address, id);
-		// addEventToSaveButton(name, id);
+		// HTML stored in string to update results each time save button is clicked.
+		resultsHTML += createResultsComponent(name, address, id);
 	})
+	
+	resultsList.innerHTML = resultsHTML;
 
 	const saveButtons = document.querySelectorAll(".restaurant-save");
 
