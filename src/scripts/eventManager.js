@@ -5,9 +5,8 @@ let resultsContainer = document.querySelector('.container__results')
 const searchEventHandler = () => {
     getMeetupInfo()
     .then(results => {
-        console.log(results);
-        let searchResults = results.events;
-        buildResultsHTML(searchResults);
+        searchResults = results.events
+        buildResultsHTML();
     })
 }
 
