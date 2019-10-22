@@ -5,14 +5,14 @@ let resultsContainer = document.querySelector('.container__results')
 const searchEventHandler = () => {
     getMeetupInfo()
     .then(results => {
-        searchResults = results.events
+        searchResults = results.events;
         buildResultsHTML();
     })
 }
 
+const meetup__searchButton = document.querySelector('.meetup__searchButton');
+meetup__searchButton.addEventListener('click', searchEventHandler);
 
 
 
-const meetup__searchButton = document.querySelector('.meetup__searchButton')
-meetup__searchButton.addEventListener('click', searchEventHandler)
-
+console.log(saveButtons)

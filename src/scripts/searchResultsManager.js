@@ -1,5 +1,9 @@
 // Defines functions which feed events into html and display them on the DOM
 
+let resultsObject = {
+
+}
+
 const buildResultsHTML = () => {
     console.log(searchResults[0])
     let resultsHTML = 	``
@@ -7,10 +11,10 @@ const buildResultsHTML = () => {
         
         console.log(event);
         if (event) {
-            resultsHTML += `<li>${event.name.text}: ${event.description.text}<button>Save</button></li>`;
+            resultsHTML += `<li>${event.name.text}: ${event.description.text}<button class='save'>Save</button></li>`;
 
         } else {
-            resultsHTML += `<li> No results found <button>Save</button></li>`;
+            resultsHTML += `<li> No results found <button class='save'>Save</button></li>`;
         }
        
         console.log(resultsContainer.textContent)
@@ -21,4 +25,11 @@ const buildResultsHTML = () => {
     <ol>
     ${resultsHTML}
     </ol>` 
+
+    const saveButtons = document.querySelectorAll('.save');
+    saveButtons.forEach(function(saveButton) {
+        saveButton.addEventListener('click', displayItinerary)
+    })
+    console.log(saveButtons)
 }
+
