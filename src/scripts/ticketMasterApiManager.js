@@ -42,7 +42,6 @@ const handleGenreSearch = event => {
     const genreInputField = document.getElementById("concertInput");
     tmAPI.myParsedGenres(genreInputField.value)
     .then(parsedGenres => {
-        console.log("manila take 2", parsedGenres);
         buildResultsForm(parsedGenres._embedded.events[0].name);
         console.log("manila", parsedGenres._embedded.events[0].name);
         genreInputField.value = "";
