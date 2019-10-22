@@ -15,8 +15,8 @@
 			<button></button>
 		</fieldset>
 		<fieldset>
-			<input type="text" name="restaurants" placeholder="restaurants by feature">
-			<button></button>
+			<input id="restaurant-input" type="text" name="restaurants" placeholder="restaurants by feature">
+			<button id="restaurant-search">Search</button>
 		</fieldset>
 		<fieldset>
 			<input type="text" name="meetups" placeholder="meetups by feature">
@@ -42,12 +42,14 @@
 		<h3>My Itinerary</h3>
 		<ul>
 			<li>Park:</li>
-			<li>Restaurant:</li>
+			<li>Restaurant: <span id="restaurant-itinerary"></span></li>
 			<li>Meetup:</li>
 			<li>Concert:</li>
 		</ul>
 	</section>
+
 	<script type="text/javascript" src="scripts/apiKeys.js"></script>
+	<script type="text/javascript" src="scripts/restaurant.js"></script>
 	<script type="text/javascript" src="scripts/main.js"></script>
 </body>
 </html>
