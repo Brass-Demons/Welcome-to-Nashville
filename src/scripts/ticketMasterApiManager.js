@@ -42,8 +42,7 @@ const handleGenreSearch = event => {
     const genreInputField = document.getElementById("concertInput");
     tmAPI.myParsedGenres(genreInputField.value)
     .then(parsedGenres => {
-        buildResultsForm(parsedGenres._embedded.events[0].name);
-        console.log("manila", parsedGenres._embedded.events[0].name);
+        buildResultsForm(parsedGenres._embedded.events);
         genreInputField.value = "";
     })
 }
@@ -51,13 +50,22 @@ const eventListenerToGenreSearch = () => {
     const genreSearchButton = document.querySelector(".genreButton");
     genreSearchButton.addEventListener("click", handleGenreSearch);
 }
+// code above this line is clean
 // results html for dom
-const buildResultsForm = () => {
+// genre = parsedGenres._embedded.events[0].classifications[0].genre.name
+// address = parsedGenres._embedded.events[0]._embedded.venues[0].address
+// location = parsedGenres._embedded.events[0]._embedded.venues[0].name
+// name = parsedGenres._embedded.events[0].name
+const buildResultsForm = (genreArray) => {
+    genreArray.forEach(genre => {
+        console.log("what's here?", genre._embedded);
+    })
     const genreResultsList = `
     <li><button class="genreSave">Save</button></li>
     `
     const genreResults = document.querySelector("ol");
     genreResults.innerHTML += genreResultsList;
+    console.log("test", genreResultsList)
 }
 eventListenerToGenreSearch();
 
