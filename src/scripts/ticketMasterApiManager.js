@@ -63,13 +63,13 @@ const buildResultsForm = (genreArray) => {
     const genreResultsList = `
     <li><button class="genreSave">Save</button></li>
     `
-    const genreResults = document.querySelector("ol");
+    const genreResults = document.querySelector(".genreResult");
     genreResults.innerHTML += genreResultsList;
     console.log("test", genreResultsList)
 }
 eventListenerToGenreSearch();
 
-// let nameArray = [];
-// let locationArray = [];
-// let addressArray = [];
-// let genreArray = [];
+let nameArray = [];
+let locationArray = [];
+let addressArray = [];
+let genreArray = [];
