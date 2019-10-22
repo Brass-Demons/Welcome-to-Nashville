@@ -8,8 +8,8 @@ const ticketMasterBaseUrl = `https://app.ticketmaster.com/discovery/v2/`;
 // name = parsedGenres._embedded.events[0].name
 // console.log("stuff", myParsedGenres);
 const tmAPI = {
-    myParsedGenres: (searchTicketMaster) => {
-        return fetch(`${ticketMasterBaseUrl}events.json?classificationName=music&city=Nashville&apikey=${concertKey}&genre`)
+    myParsedGenres: (inputValue) => {
+        return fetch(`${ticketMasterBaseUrl}events.json?classificationName=music&city=Nashville&apikey=${concertKey}&genre=${inputValue}`)
             .then(genre => genre.json())
     }
 }
@@ -49,7 +49,7 @@ const handleGenreSearch = event => {
 }
 const eventListenerToGenreSearch = () => {
     const genreSearchButton = document.querySelector(".genreButton");
-    genreSearchButton.addEventListener("click", buildResultsForm);
+    genreSearchButton.addEventListener("click", handleGenreSearch);
 }
 // results html for dom
 const buildResultsForm = () => {
