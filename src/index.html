@@ -8,46 +8,33 @@
 	<section>
 		<h1>Welcome to Nashville</h1>
 	</section>
-	<section>
+	<section class='container__searchFields'>
 		<h3>Search for stuff to do today</h3>
-		<fieldset>
-			<input type="text" name="parks" placeholder="parks by feature">
-			<button></button>
-		</fieldset>
-		<fieldset>
-			<input type="text" name="restaurants" placeholder="restaurants by feature">
-			<button></button>
-		</fieldset>
-		<fieldset>
-			<input type="text" name="meetups" placeholder="meetups by feature">
-			<button></button>
-		</fieldset>
-		<fieldset>
-			<input type="text" name="concerts" placeholder="concerts by feature">
-			<button></button>
-		</fieldset>
 	</section>
 
 	<section>
 		<h3>Results</h3>
-		<ol>
-			<li><button>Save</button></li>
+		<ol class='results'>
 			<li><button>Save</button></li>
 			<li><button>Save</button></li>
 			<li><button>Save</button></li>
 		</ol>
 	</section>
 
-	<section>
+	<section class='itinerary'>
 		<h3>My Itinerary</h3>
 		<ul>
 			<li>Park:</li>
 			<li>Restaurant:</li>
-			<li>Meetup:</li>
 			<li>Concert:</li>
 		</ul>
 	</section>
-	<script type="text/javascript" src="scripts/apiKeys.js"></script>
-	<script type="text/javascript" src="scripts/main.js"></script>
+	<script src="scripts/apiKeys.js"></script>
+	<script src="scripts/mApiHandler.js"></script>
+	<script src="scripts/mSearchFormManager.js"></script>
+	<script src="scripts/msearchResultsManager.js"></script>
+	<script src="scripts/generateItinerary.js"></script>
+	<script src="scripts/mEventManager.js"></script>
+	<script src="scripts/main.js"></script>
 </body>
 </html>
