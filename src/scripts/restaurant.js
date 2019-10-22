@@ -20,14 +20,21 @@ const addEventToSearchButton = () => {
 
 const createResultsComponent = (name, address, id) => {
 	return `
-		<li><button id="${id}">Save</button>${name}: ${address}</li>
+		<li><button class="restaurant-save" id="${id}">Save</button>${name}: ${address}</li>
 	`;
 };
 
-const addEventToSaveButton = (name, id) => {
-	const button = document.getElementById(id);
+// const addEventToSaveButton = (name, id) => {
+// 	const button = document.getElementById(id);
+// 	button.addEventListener("click", () => document.getElementById("restaurant-itinerary").innerHTML = name);
+// };
 
-	button.addEventListener("click", () => document.getElementById("restaurant-itinerary").innerHTML = name);
+const addEventToSaveButtons = buttonArr => {
+	buttonArr.forEach(button => {
+		console.log(button.parentElement)
+		
+		button.addEventListener("click", () => document.getElementById("restaurant-itinerary").innerHTML = name);
+	});
 };
 
 const renderResults = restaurants => {
@@ -38,8 +45,10 @@ const renderResults = restaurants => {
 		const { address } = restaurantObj.restaurant.location;
 
 		resultsList.innerHTML += createResultsComponent(name, address, id);
-		addEventToSaveButton(name, id);
+		// addEventToSaveButton(name, id);
 	})
-};
 
-addEventToSearchButton();
+	const saveButtons = document.querySelectorAll(".restaurant-save");
+
+	addEventToSaveButtons(saveButtons);
+};
