@@ -1,5 +1,4 @@
 console.log("it works");
-
 const ticketMasterBaseUrl = `https://app.ticketmaster.com/discovery/v2/`;
 
 // genre = parsedGenres._embedded.events[0].classifications[0].genre.name
@@ -14,6 +13,7 @@ const tmAPI = {
     }
 }
 const handleSearch = event => {
+    console.log("stuff2");
         const inputField = document.getElementById("concertInput");
         tmAPI.myParsedGenres(inputField.value)
             .then(response => {
@@ -30,7 +30,7 @@ const buildSearchForm = () => {
         </fieldset>
         `
 
-        const genreContainerDiv = document.querySelector(".genreSearch");
+        const genreContainerDiv = document.querySelector(".container__searchFields");
         genreContainerDiv.innerHTML += genreSearchForm;
     }
 buildSearchForm();
@@ -57,7 +57,7 @@ const buildResultsForm = (genreArray) => {
             const genreResultsList = `
         <li>${genre.name}: ${genre._embedded.venues[0].name}: ${genre._embedded.venues[0].address.line1} <button class="genreSave">Save</button></li>
         `
-            const genreResults = document.querySelector(".genreResult");
+            const genreResults = document.querySelector(".container__results");
             genreResults.innerHTML += genreResultsList;
             console.log("test", genreResultsList)
         }
