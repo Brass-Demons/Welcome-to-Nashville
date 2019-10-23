@@ -23,7 +23,7 @@ console.log("hi")
 const makeSearchForm = () => {
   const parkSearchList = `
     <fieldset>
-    <select id ="parks-dropdown">
+    <select id ="parks">
     <option value="" disabled selected hidden>parks by feature</option>
     <option value="dog_park">Dog Park</option>
     <option value="hiking_trails">Hiking Trails</option>
@@ -31,7 +31,7 @@ const makeSearchForm = () => {
     <option value="basketball_court">Basketball Courts</option>
     <option value="swimming_pool">Swimming Pool</option>
     </select>
-    <button id="parks-search-button">Button</button>
+    <button id="park-search-button">Button</button>
 		</fieldset>
     `
   // console.log(searchForm)
@@ -42,38 +42,30 @@ const makeSearchForm = () => {
 //This will go on the main JS page in the end.
 makeSearchForm();
 
-//I need to grab the id of whichever feature they pick from dropdown menu.
-// var searchOptionValue = document.getElementById("parks").selectedOptions[0].value
-// console.log(searchOptionValue)
-
-let e = document.getElementById("parks-dropdown");
-let result = e.options[e.selectedIndex].value;
-console.log("DROPDOWN RESULT", result)
-
+//Grabbing whatever is in the option tag of the dropdown menu, putting the value of that in the searchInput variable
 const searchHandler = () => {
-  // const parkSearchInput = document.querySelector("option")
-  // console.log(parkSearchInput.value);
+  debugger
+  const parkSearchInput = document.querySelector("option")
+  console.log("user input from dropdown", parkSearchInput.value);
   //parkSearch is the function that fetches the data.
-
   parkSearch(parkSearchInput.value)
     .then(response => {
-      parkDisplay(response.parks)
-      //Not sure why this is here in Jisie's code
+      console.log(response.parks)
       searchInput.value = ""
     })
 };
 
 // const attachEventListenerToSearchButton = () => {
-let searchButton = document.querySelector("#parks-search-button")
-console.log(searchButton)
-searchButton.addEventListener("click", searchHandler);
+  let searchButton = document.querySelector("#park-search-button")
+  console.log(searchButton)
+  searchButton.addEventListener("click", searchHandler);
 //SEARCH RESULTS MANAGER .JS FILE
 //I need the park_name, human_address
 //human_address IS AN OBJECT. But that is okay, because I can target the thingy 
 
 const parkResultsToHtml = (parkResult) => {
   `
-  <li id = "${parkResult.park_name}">${parkResult.park_name}: ${parkResult.mapped_location.human_address.address}<button id="parks-save-button">Save</button></li>
+  <li>${parkResult.park_name}: ${parkResult.mapped_location.human_address.address}<button id="parks-button">Save</button></li>
 `
 };
 //This function does the following:
@@ -88,21 +80,14 @@ const parkDisplay = (parkSearchResults) => {
     parkResultsOnDom.innerHTML = parksHtml;
   });
 
-  //FUNCTION FOR EVENT LISTENER ON SAVE BUTTON
-  //This needs to take whichever save button is clicked, and take that stuff and put it in the li of the ininerary list
-
-
-  }
-
+  //FUNCITON FOR EVENT LISTENER ON SAVE BUTTON
   const saveThisParkButton = () => {
-    const itineraryContainer = document.querySelector("ul")
-    itineraryContainer.innerHTML = `<li id = "${parkResult.park_name}">${parkResult.park_name}
-    `
+    const buttonStuff = document.querySelector("#parks-button")
   };
   //This is the event listener for the "SAVE" button.
   //The function needs to take that selected park and stick it in the DOM on the <li>Park:</li> part of the page.
-  // const whenSaveButtonIsClicked = () => {
-    const saveButton = document.querySelector("#parks-save-button")
+  const whenSaveButtonIsClicked = () => {
+    const saveButton = document.querySelector("button")
     saveButton.addEventListener("click", saveThisParkButton);
   };
 }
