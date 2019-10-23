@@ -1,7 +1,7 @@
 const parksApiBaseUrl = "https://data.nashville.gov/resource/74d7-b74t.json" 
 
 const parkSearch = (searchInput) => fetch(`
-${parksApiBaseUrl}?${searchInput} HTTP/1.1`,
+${parksApiBaseUrl}?${searchInput} `,
     {
         "headers": {
             "Accept": "application/json",

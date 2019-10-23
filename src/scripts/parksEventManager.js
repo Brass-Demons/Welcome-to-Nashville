@@ -46,13 +46,9 @@ makeSearchForm();
 // var searchOptionValue = document.getElementById("parks").selectedOptions[0].value
 // console.log(searchOptionValue)
 
-let e = document.getElementById("parks-dropdown");
-let result = e.options[e.selectedIndex].value;
-console.log("DROPDOWN RESULT", result)
-
 const searchHandler = () => {
-  // const parkSearchInput = document.querySelector("option")
-  // console.log(parkSearchInput.value);
+  const parkSearchInput = document.getElementById("parks-dropdown").value
+  console.log(e.value);
   //parkSearch is the function that fetches the data.
 
   parkSearch(parkSearchInput.value)
@@ -104,7 +100,7 @@ const parkDisplay = (parkSearchResults) => {
   // const whenSaveButtonIsClicked = () => {
     const saveButton = document.querySelector("#parks-save-button")
     saveButton.addEventListener("click", saveThisParkButton);
-  };
-}
+  
+
 
 
