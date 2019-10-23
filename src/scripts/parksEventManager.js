@@ -36,7 +36,7 @@ const makeSearchForm = () => {
     `
   // console.log(searchForm)
   //Taking the search form and rendering it to the DOM
-  const parkSearchContainerDiv = document.querySelector("#search");
+  const parkSearchContainerDiv = document.querySelector("container__searchFields");
   parkSearchContainerDiv.innerHTML = parkSearchList;
 };
 //This will go on the main JS page in the end.
@@ -78,7 +78,7 @@ const parkResultsToHtml = (parkResult) => {
 //3. Comes back and sticks the string in that ol. 
 const parkDisplay = (parkSearchResults) => {
   let parksHtml = ""
-  const parkResultsOnDom = document.querySelector("ol")
+  const parkResultsOnDom = document.querySelector(".container__results")
   parkSearchResults.forEach(park => {
     parksHtml += parkResultsToHtml(park)
     parkResultsOnDom.innerHTML = parksHtml;
