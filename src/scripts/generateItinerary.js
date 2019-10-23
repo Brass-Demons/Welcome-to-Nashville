@@ -1,13 +1,14 @@
 // Create HTML and add to DOM for Itinerary
 
 const itineraryObj = {
-    park : ,
-    restaurant: ,
-    meetup: ,
-    concert:
-};
+    park : 'Radnor',
+    restaurant: 'Sitar',
+    meetup: 'Women in Tech',
+    concert: 'Jack White'
+}
 
 const displayItinerary = () => {
+    debugger
 
     // same as writing const park = itinerary.park, const restaurant = itinerary.restaurant, etc.
     const { park, restaurant, meetup, concert } = itineraryObj;
