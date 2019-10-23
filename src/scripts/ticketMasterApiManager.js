@@ -11,7 +11,6 @@ const tmAPI = {
     myParsedGenres: (inputValue) => {
         return fetch(`${ticketMasterBaseUrl}events.json?classificationName=music&dmaId=343&apikey=${concertKey}&genre=${inputValue}`)
             .then(genre => genre.json())
-    }
 }
 const handleSearch = event => {
     const inputField = document.getElementById("concertInput");
