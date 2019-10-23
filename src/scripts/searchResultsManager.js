@@ -1,17 +1,35 @@
 // Defines functions which feed events into html and display them on the DOM
 
-const buildResultsHTML = (searchResults) => {
-    let resultsHTML = 	``
-    if (searchResults) {
-        resultsHTML = `<li>${searchResults[0].name.text}: ${searchResults[0].description.text}<button>Save</button></li>`;
-    } else {
-        resultsHTML = `<li> No results found <button>Save</button></li>`;
-    }
-    resultsContainer.innerHTML += 
-    `<h3>Results</h3>
-    <ol>
-    ${resultsHTML}
-    </ol>`
+let resultsObject = {
+
 }
 
+const buildResultsHTML = () => {
+    // console.log(searchResults[0])
+    let resultsHTML = 	``
+    searchResults.forEach(function (event) {
+        
+        // console.log(event);
+        if (event) {
+            resultsHTML += `<li>${event.name.text}: ${event.description.text}<button class='save'>Save</button></li>`;
+
+        } else {
+            resultsHTML += `<li> No results found <button class='save'>Save</button></li>`;
+        }
+       
+        // console.log(resultsContainer.textContent)
+    })
+    resultsContainer.innerHTML += 
+    `
+    <h3>Results</h3>
+    <ol>
+    ${resultsHTML}
+    </ol>` 
+
+    const saveButtons = document.querySelectorAll('.save');
+    saveButtons.forEach(function(saveButton) {
+        saveButton.addEventListener('click', displayItinerary)
+    })
+    console.log(saveButtons)
+}
 

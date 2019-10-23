@@ -19,7 +19,7 @@ const API = {
 //     .then(events => events.json());
 // }
 
-// fetch(`https://www.eventbriteapi.com/v3/events/search/?q=${userInput}&location.address=nashville&token=${CCI5AIPTO72K63BN4OOK}`, {
+// fetch(`https://www.eventbriteapi.com/v3/events/search/?q=${userInput}&location.address=nashville&token=${meetupKey}`, {
 //   "headers": {
 //       "Accept": "application/json"
 //   }
