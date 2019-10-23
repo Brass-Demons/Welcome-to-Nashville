@@ -9,21 +9,17 @@ const ticketMasterBaseUrl = `https://app.ticketmaster.com/discovery/v2/`;
 // console.log("stuff", myParsedGenres);
 const tmAPI = {
     myParsedGenres: (inputValue) => {
-        return fetch(`${ticketMasterBaseUrl}events.json?classificationName=music&city=Nashville&apikey=${concertKey}&genre=${inputValue}`)
+        return fetch(`${ticketMasterBaseUrl}events.json?classificationName=music&dmaId=343&apikey=${concertKey}&genre=${inputValue}`)
             .then(genre => genre.json())
     }
 }
-
-
-// *****2nd .then commented out to test other strategy
-// tmAPI.myParsedGenres().then(parsedGenres => {
-//     myParsedData = parsedGenres;
-//     console.log("in 2nd .then", myParsedData);
-// })
-// ****** end of 2nd .then commented out
-// check your notes in notebook for pattern & think of what you're trying to accomplish
-// dom components beginnings
-// search form completed
+const handleSearch = event => {
+    const inputField = document.getElementById("concertInput");
+    tmAPI.myParsedGenres(inputField.value)
+        .then(response => {
+            buildResultsForm(response._embedded.events)
+        })
+}
 
 
 const buildSearchForm = () => {
@@ -41,35 +37,31 @@ buildSearchForm();
 const handleGenreSearch = event => {
     const genreInputField = document.getElementById("concertInput");
     tmAPI.myParsedGenres(genreInputField.value)
-    .then(parsedGenres => {
-        buildResultsForm(parsedGenres._embedded.events);
-        genreInputField.value = "";
-    })
+        .then(parsedGenres => {
+            buildResultsForm(parsedGenres._embedded.events);
+            genreInputField.value = "";
+        })
 }
 const eventListenerToGenreSearch = () => {
     const genreSearchButton = document.querySelector(".genreButton");
-    genreSearchButton.addEventListener("click", handleGenreSearch);
+    genreSearchButton.addEventListener("click", handleSearch);
 }
+
 // code above this line is clean
-// results html for dom
-// genre = parsedGenres._embedded.events[0].classifications[0].genre.name
-// address = parsedGenres._embedded.events[0]._embedded.venues[0].address
-// location = parsedGenres._embedded.events[0]._embedded.venues[0].name
-// name = parsedGenres._embedded.events[0].name
+
+
 const buildResultsForm = (genreArray) => {
+    console.log("help", genreArray);
     genreArray.forEach(genre => {
-        console.log("what's here?", genre._embedded);
-    })
-    const genreResultsList = `
-    <li><button class="genreSave">Save</button></li>
-    `
-    const genreResults = document.querySelector(".genreResult");
-    genreResults.innerHTML += genreResultsList;
-    console.log("test", genreResultsList)
+        console.log("what's here?", genre);
+        const genreResultsList = `
+        <li>${genre.name}<button class="genreSave">Save</button></li>
+        `
+        const genreResults = document.querySelector(".genreResult");
+        genreResults.innerHTML += genreResultsList;
+        console.log("test", genreResultsList)
+    }
+    )
 }
 eventListenerToGenreSearch();
 
-let nameArray = [];
-let locationArray = [];
-let addressArray = [];
-let genreArray = [];
