@@ -1,12 +1,3 @@
-const numOfResults = 4;
-
-const API = {
-	getRestaurants(foodSearch) {
-		return fetch(`https://developers.zomato.com/api/v2.1/search?entity_id=1138&entity_type=city&q=${foodSearch}&count=${numOfResults}&sort=rating&apikey=${restaurantKey}`)
-    		.then(r => r.json())
-	}
-};
-
 const addEventToSearchButton = () => {
 	const button = document.getElementById("restaurant-search");
 
