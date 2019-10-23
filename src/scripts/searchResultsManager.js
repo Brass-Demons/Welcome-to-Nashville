@@ -5,11 +5,11 @@ let resultsObject = {
 }
 
 const buildResultsHTML = () => {
-    console.log(searchResults[0])
+    // console.log(searchResults[0])
     let resultsHTML = 	``
     searchResults.forEach(function (event) {
         
-        console.log(event);
+        // console.log(event);
         if (event) {
             resultsHTML += `<li>${event.name.text}: ${event.description.text}<button class='save'>Save</button></li>`;
 
@@ -17,7 +17,7 @@ const buildResultsHTML = () => {
             resultsHTML += `<li> No results found <button class='save'>Save</button></li>`;
         }
        
-        console.log(resultsContainer.textContent)
+        // console.log(resultsContainer.textContent)
     })
     resultsContainer.innerHTML += 
     `
