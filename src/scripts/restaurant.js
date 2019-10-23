@@ -1,8 +1,8 @@
 const addEventToSearchButton = () => {
-	const button = document.getElementById("restaurant-search");
+	const button = document.querySelector("restaurants__searchButton");
 
 	button.addEventListener("click", () => {
-		const input = document.getElementById("restaurant-input").value;
+		const input = document.querySelector("restaurant__input").value;
 		
 		API.getRestaurants(input)
 			.then(results => renderResults(results.restaurants));
