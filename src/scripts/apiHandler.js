@@ -1,6 +1,6 @@
 // Define function for fetch request incorporating variables to allow for user search input
 
-// This is the number of results that show up for the search. You can use this variable for your own functions as well if you'd like. It is currently being using for the restaurant results.
+// This is the max number of results that show up for the search. You can use this variable for your own functions as well if you'd like. It is currently being using for the restaurant results.
 const numOfResults = 4;
 
 const API = {

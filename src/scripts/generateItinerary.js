@@ -8,8 +8,6 @@ const itineraryObj = {
 }
 
 const displayItinerary = () => {
-    debugger
-
     // same as writing const park = itinerary.park, const restaurant = itinerary.restaurant, etc.
     const { park, restaurant, meetup, concert } = itineraryObj;
 
