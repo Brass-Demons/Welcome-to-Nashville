@@ -21,8 +21,13 @@ const searchFormHTML = () => {
 		<button class='searchButton meetup__searchButton'>SEARCH</button>
 	</fieldset>
 	<fieldset>
-		<input type="text" name="concerts" placeholder="concerts by genre">
+		<input type="text" class="concertInput" name="concerts" placeholder="concerts by genre">
 		<button class='searchButton concerts__searchButton'>SEARCH</button>
 	</fieldset>
 	`;
 };
+
+const searchFieldContainer = document.querySelector('.container__searchFields');
+searchFieldContainer.innerHTML += searchFormHTML();
+// ticketmaster event listener for search results
+eventListenerToGenreSearch();
