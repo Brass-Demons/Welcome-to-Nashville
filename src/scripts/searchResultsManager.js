@@ -6,28 +6,28 @@
 //     let resultsHTML = 	``
 //     searchResults.forEach(function (event) {
         
-//         // console.log(event);
-//         if (event) {
-//             resultsHTML += `<li>${event.name.text}: ${event.description.text}<button class='save'>Save</button></li>`;
+        console.log(event.id);
+        if (event) {
+            resultsHTML += `<li class='${event.id}'>${event.name.text}: ${event.description.text}<button class= 'save${event.id}'>Save</button></li>`;
 
-//         } else {
-//             resultsHTML += `<li> No results found <button class='save'>Save</button></li>`;
-//         }
+        } else {
+            resultsHTML += `<li> No results found <button class='save'>Save</button></li>`;
+        }
        
-//         // console.log(resultsContainer.textContent)
-//     })
-//     resultsContainer.innerHTML = 
-//     `
-//     <h3>Results</h3>
-//     <ol>
-//     ${resultsHTML}
-//     </ol>` 
+        console.log(resultsContainer.textContent)
+    
+    resultsContainer.innerHTML = 
+    `
+    <h3>Results</h3>
+    <ol>
+    ${resultsHTML}
+    </ol>` 
 
-//     const saveButtons = document.querySelectorAll('.save');
-//     saveButtons.forEach(function(saveButton) {
-//         saveButton.addEventListener('click', displayItinerary)
-//     })
-// }
+    const saveButtons = document.querySelectorAll('.save');
+    saveButtons.forEach(function(saveButton) {
+        saveButton.addEventListener('click', displayItinerary)
+    })
+
 
 // Executed by the search click event
 const resultsContainerHTML = () => {
@@ -59,4 +59,4 @@ const renderResults = restaurants => {
     const saveButtons = document.querySelectorAll(".restaurant-save");
 
     addEventToSaveButtons(saveButtons);
-};
+}
