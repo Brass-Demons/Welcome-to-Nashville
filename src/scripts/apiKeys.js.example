@@ -1,5 +1,12 @@
+<<<<<<< HEAD
 const concertKey = `YOUR KEY`;
 const restaurantKey = `YOUR KEY`;
 const meetupKey = `YOUR KEY`;
 const parkKey = `YOUR KEY`;
 
+=======
+const concertKey = `FgeUGHIQw12khGk9ukP4WamWvpnoeBzC`;
+const restaurantKey = `ac2a00ca76bccfa2840a1dd271fd6cee`;
+const meetupKey = `CCI5AIPTO72K63BN4OOK`;
+const parkKey = `P7SZS21rPkPvHmuIvW4glESQf`;
+>>>>>>> master
