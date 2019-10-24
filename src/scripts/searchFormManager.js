@@ -36,5 +36,3 @@ const searchFormHTML = () => {
 
 const searchFieldContainer = document.querySelector('.container__searchFields');
 searchFieldContainer.innerHTML += searchFormHTML();
-// ticketmaster event listener for search results
-eventListenerToGenreSearch();
