@@ -43,24 +43,7 @@ const makeSearchForm = () => {
 //This will go on the main JS page in the end.
 makeSearchForm();
 
-const searchHandler = () => {
-  const parkSearchInput = document.getElementById("parks-dropdown").value
-  console.log("SEARCH VALUE", parkSearchInput);
-  //parkSearch is the function that fetches the data.
 
-  parkSearch(parkSearchInput)
-    .then(response => parkDisplay(response))
-}
-
-
-  // const attachEventListenerToSearchButton = () => {
-    let searchButton = document.querySelector("#parks-search-button")
-    // console.log(searchButton)
-    searchButton.addEventListener("click", searchHandler);
-    //SEARCH RESULTS MANAGER .JS FILE
-    //I need the park_name, human_address
-    //human_address IS AN OBJECT. But that is okay, because I can target the thingy 
-  // }
 
 
 

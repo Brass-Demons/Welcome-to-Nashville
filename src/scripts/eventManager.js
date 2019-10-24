@@ -40,3 +40,39 @@ const addEventToSaveButtons = buttonArr => {
 		button.addEventListener("click", () => document.getElementById("restaurant-itinerary").innerHTML = restaurantName);
 	});
 };
+
+// Parks search event handler and second .then call
+
+const searchHandler = () => {
+	const parkSearchInput = document.getElementById("parks-dropdown").value
+	console.log("SEARCH VALUE", parkSearchInput);
+	//parkSearch is the function that fetches the data.
+  
+	parkSearch(parkSearchInput)
+	  .then(response => parkDisplay(response))
+  }
+  
+  
+	// const attachEventListenerToSearchButton = () => {
+	  let searchButton = document.querySelector("#parks-search-button")
+	  // console.log(searchButton)
+	  searchButton.addEventListener("click", searchHandler);
+	  //SEARCH RESULTS MANAGER .JS FILE
+	  //I need the park_name, human_address
+	  //human_address IS AN OBJECT. But that is okay, because I can target the thingy 
+	// }
+
+	
+//Ticketmaster event manager and second .then call
+
+	    // add event listener to genre search button
+		const genreSearchButton = document.querySelector(".concerts__searchButton");
+		genreSearchButton.addEventListener("click", () => {
+			console.log("event listener for genre");
+			const genreInput = document.querySelector(".concertInput").value;
+			renderResultsContainer();
+			tmAPI.myParsedGenres(input)
+		.then(response => {
+			renderResults(response._embedded.events)
+		})
+	})
