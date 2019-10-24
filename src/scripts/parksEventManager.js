@@ -65,8 +65,8 @@ const searchHandler = () => {
 
 
   const parkResultsToHtml = (parkResult) => {
-  parkResult.mapped_location.split()
-    console.log(parkResult.mapped_location)
+  // parkResult.mapped_location.split()
+  //   console.log(parkResult.mapped_location)
     return `<ul>
   <li id = "${parkResult.park_name}">${parkResult.park_name}: ${parkResult.mapped_location.human_address}<button id="${parkResult.park_name}">Save</button></li></ul>`;
 
