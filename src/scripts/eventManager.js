@@ -19,7 +19,7 @@ const searchEventHandler = () => {
 // Refactor with a loop.
 const addEventToSearchButtons = () => {
 	const restaurantButton = document.querySelector(".restaurants__searchButton");
-	const meetup__searchButton = document.querySelector('.meetup__searchButton');
+	// const meetup__searchButton = document.querySelector('.meetup__searchButton');
 
 	restaurantButton.addEventListener("click", () => {
 		const input = document.querySelector(".restaurants__input").value;
@@ -30,7 +30,7 @@ const addEventToSearchButtons = () => {
 			.then(results => renderResults(results.restaurants));
 	});
 
-	meetup__searchButton.addEventListener('click', searchEventHandler);
+	// meetup__searchButton.addEventListener('click', searchEventHandler);
 };
 
 const addEventToSaveButtons = buttonArr => {
