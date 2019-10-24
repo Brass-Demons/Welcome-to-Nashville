@@ -1,10 +1,9 @@
-// Defines function which creates and appends search form HTML to the DOM
-
+// Defines function which creates search form HTML
 const searchFormHTML = () => {
 	return `
 	<h1>Welcome to Nashville</h1>
 	</section>
-	<section >
+	<section>
 		<h3>Search for stuff to do today</h3>
 	</section>
 	<fieldset>
@@ -12,7 +11,7 @@ const searchFormHTML = () => {
 		<button class='parks__searchButton'>SEARCH</button>
 	</fieldset>
 	<fieldset>
-		<input type="text" name="restaurants" placeholder="restaurants by cuisine">
+		<input class="restaurant__input" type="text" name="restaurants" placeholder="restaurants by cuisine">
 		<button class='restaurants__searchButton'>SEARCH</button>
 	</fieldset>
 	<fieldset>
@@ -24,8 +23,4 @@ const searchFormHTML = () => {
 		<button class='concerts__searchButton'>SEARCH</button>
 	</fieldset>
 	`
-}
-
-
-const searchFieldContainer = document.querySelector('.container__searchFields');
-searchFieldContainer.innerHTML += searchFormHTML();
+};
