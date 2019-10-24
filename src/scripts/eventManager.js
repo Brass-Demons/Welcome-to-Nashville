@@ -4,6 +4,7 @@ let resultsContainer = document.querySelector('.container__results')
 const inputFields = document.querySelectorAll('input')
 
 const searchEventHandler = () => {
+   
     inputFields.forEach(function(inputField){
         console.log(inputField.value)
     })
