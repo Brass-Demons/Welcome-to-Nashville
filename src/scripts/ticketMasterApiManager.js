@@ -3,6 +3,12 @@ debugger
 const ticketMasterBaseUrl = `https://app.ticketmaster.com/discovery/v2/`;
 
 // initial fetch parsing by genre
+const tmAPI = {
+    myParsedGenres: (inputValue) => {
+        return fetch(`${ticketMasterBaseUrl}events.json?classificationName=${inputValue}&dmaId=343&apikey=${concertKey}`)
+        .then(genre => genre.json())
+    }
+}
 
 // function to take the search event input info and return the data in a usable form
 const handleSearch = event => {
@@ -29,8 +35,22 @@ const handleSearch = event => {
 // calling function to display to dom
 // buildSearchForm();
 
+// function to parse info from json object to only what user asked for in terms of genre
+const handleGenreSearch = event => {
+    const genreInputField = document.querySelector(".concertInput");
+    tmAPI.myParsedGenres(genreInputField.value)
+    .then(parsedGenres => {
+        buildResultsForm(parsedGenres._embedded.events);
+        genreInputField.value = "";
+    })
+}
 
-// }
+// adding event listener to search button to display results to dom, calls handleSearch function
+const eventListenerToGenreSearch = () => {
+    const genreSearchButton = document.querySelector(".concerts__searchButton");
+    console.log("test test", genreSearchButton);
+    genreSearchButton.addEventListener("click", handleSearch);
+}
 // calling event listener function
 // eventListenerToGenreSearch();
 

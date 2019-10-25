@@ -6,29 +6,12 @@ const numOfResults = 4;
 const API = {
 	getRestaurants(foodSearch) {
 		return fetch(`https://developers.zomato.com/api/v2.1/search?entity_id=1138&entity_type=city&q=${foodSearch}&count=${numOfResults}&sort=rating&apikey=${restaurantKey}`)
-			.then(r => r.json())
+    		.then(r => r.json())
 	},
-	getMeetupInfo() {
-		return fetch(`https://raw.githubusercontent.com/nss-cohort-36/temp-eb-api/master/search-response.json`)
-			.then(r => r.json())
-	},
-	myParsedGenres(inputValue) {
-		return fetch(`${ticketMasterBaseUrl}events.json?classificationName=${inputValue}&dmaId=343&apikey=${concertKey}`)
-			.then(genre => genre.json())
-	},
-	parkSearch(parkSearchInput) {
-		return fetch(`${parksApiBaseUrl}?${parkSearchInput}=Yes`,
-			{
-				"headers": {
-					"Accept": "application/json",
-					"X-App-Token": "P7SZS21rPkPvHmuIvW4glESQf"
-				}
-			})
-			.then(response => response.json());
-	}
+	// add your own fetch functions to this API object
 };
 
-// This was for the Eventbrite fetch call 
+
 // const meetupBaseUrl = 'https://www.eventbriteapi.com/v3/'
 
 // const getMeetupInfo = () => {
@@ -42,8 +25,8 @@ const API = {
 //   }
 // }
 
-// const getMeetupInfo = () => {
+const getMeetupInfo = () => {
 
-// return fetch(`https://raw.githubusercontent.com/nss-cohort-36/temp-eb-api/master/search-response.json`)
-//     .then(r => r.json())   
-// }    
+return fetch(`https://raw.githubusercontent.com/nss-cohort-36/temp-eb-api/master/search-response.json`)
+    .then(r => r.json())   
+}    
