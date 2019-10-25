@@ -28,6 +28,8 @@ const API = {
 	}
 };
 
+// API.getMeetupInfo()
+
 // This was for the Eventbrite fetch call 
 // const meetupBaseUrl = 'https://www.eventbriteapi.com/v3/'
 

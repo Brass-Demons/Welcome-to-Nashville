@@ -2,9 +2,10 @@
 
 
 const buildResultsHTML = () => {
-    // console.log(searchResults[0])
+
     let resultsHTML = 	``
     searchResults.forEach(function (event) {
+
         
         console.log(event.id);
         if (event) {
@@ -13,8 +14,7 @@ const buildResultsHTML = () => {
         } else {
             resultsHTML += `<li> No results found <button class='save'>Save</button></li>`;
         }
-       
-        console.log(resultsContainer.textContent)
+
     })
     
     resultsContainer.innerHTML = 
@@ -24,10 +24,7 @@ const buildResultsHTML = () => {
     ${resultsHTML}
     </ol>` 
 
-    const saveButtons = document.querySelectorAll('.save');
-    saveButtons.forEach(function(saveButton) {
-        saveButton.addEventListener('click', displayItinerary)
-    })
+    resultsContainer.addEventListener('click', displayItinerary)
 }
 
 // Executed by the search click event
