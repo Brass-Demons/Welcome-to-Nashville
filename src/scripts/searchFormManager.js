@@ -17,7 +17,7 @@ const searchFormHTML = () => {
 			<option value="basketball_courts">Basketball Courts</option>
 			<option value="swimming_pool">Swimming Pool</option>
 		</select>
-		<button id="parks-search-button">Button</button>
+		<button id="parks-search-button">SEARCH</button>
 	</fieldset>
 	<fieldset>
 		<input class="restaurants__input" type="text" name="restaurants" placeholder="restaurants by cuisine">
