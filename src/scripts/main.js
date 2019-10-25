@@ -2,3 +2,4 @@
 // Anything else will be triggered within the click events.
 renderInitialPage();
 meetupAddEventListener();
+attachEventListenerToSearchButton();
