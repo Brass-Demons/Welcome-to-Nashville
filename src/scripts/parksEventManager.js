@@ -21,46 +21,29 @@ console.log("hi")
 
 //MAKING SEARCH FORM IN AN HTML STRING.
 
-const makeSearchForm = () => {
-  const parkSearchList = `
-    <fieldset>
-    <select id ="parks-dropdown">
-    <option value="" disabled selected hidden>parks by feature</option>
-    <option value="dog_park">Dog Park</option>
-    <option value="hiking_trails">Hiking Trails</option>
-    <option value="playground">Playground</option>
-    <option value="basketball_courts">Basketball Courts</option>
-    <option value="swimming_pool">Swimming Pool</option>
-    </select>
-    <button id="parks-search-button">Button</button>
-		</fieldset>
-    `
+// const makeSearchForm = () => {
+  // const parkSearchList = `
+  //   <fieldset>
+  //   <select id ="parks-dropdown">
+  //   <option value="" disabled selected hidden>parks by feature</option>
+  //   <option value="dog_park">Dog Park</option>
+  //   <option value="hiking_trails">Hiking Trails</option>
+  //   <option value="playground">Playground</option>
+  //   <option value="basketball_courts">Basketball Courts</option>
+  //   <option value="swimming_pool">Swimming Pool</option>
+  //   </select>
+  //   <button id="parks-search-button">Button</button>
+	// 	</fieldset>
+  //   `
   // console.log(searchForm)
   //Taking the search form and rendering it to the DOM
-  const parkSearchContainerDiv = document.querySelector(".container__searchFields");
-  parkSearchContainerDiv.innerHTML = parkSearchList;
-};
+  // const parkSearchContainerDiv = document.querySelector(".container__searchFields");
+  // parkSearchContainerDiv.innerHTML = parkSearchList;
+// };
 //This will go on the main JS page in the end.
-makeSearchForm();
-
-const searchHandler = () => {
-  const parkSearchInput = document.getElementById("parks-dropdown").value
-  console.log("SEARCH VALUE", parkSearchInput);
-  //parkSearch is the function that fetches the data.
-
-  parkSearch(parkSearchInput)
-    .then(response => parkDisplay(response))
-}
+// makeSearchForm();
 
 
-  // const attachEventListenerToSearchButton = () => {
-    let searchButton = document.querySelector("#parks-search-button")
-    // console.log(searchButton)
-    searchButton.addEventListener("click", searchHandler);
-    //SEARCH RESULTS MANAGER .JS FILE
-    //I need the park_name, human_address
-    //human_address IS AN OBJECT. But that is okay, because I can target the thingy 
-  // }
 
 
 

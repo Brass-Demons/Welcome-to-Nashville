@@ -9,8 +9,15 @@ const searchFormHTML = () => {
 		<h3>Search for stuff to do today</h3>
 	</section>
 	<fieldset>
-		<input type="text" name="parks" placeholder="parks by feature">
-		<button class='searchButton parks__searchButton'>SEARCH</button>
+		<select id ="parks-dropdown">
+			<option value="" disabled selected hidden>parks by feature</option>
+			<option value="dog_park">Dog Park</option>
+			<option value="hiking_trails">Hiking Trails</option>
+			<option value="playground">Playground</option>
+			<option value="basketball_courts">Basketball Courts</option>
+			<option value="swimming_pool">Swimming Pool</option>
+		</select>
+		<button id="parks-search-button">Button</button>
 	</fieldset>
 	<fieldset>
 		<input class="restaurants__input" type="text" name="restaurants" placeholder="restaurants by cuisine">
@@ -29,5 +36,3 @@ const searchFormHTML = () => {
 
 const searchFieldContainer = document.querySelector('.container__searchFields');
 searchFieldContainer.innerHTML += searchFormHTML();
-// ticketmaster event listener for search results
-eventListenerToGenreSearch();

@@ -1,10 +1,10 @@
 // Defines functions which feed events into html and display them on the DOM
 
 
-// const buildResultsHTML = () => {
-//     // console.log(searchResults[0])
-//     let resultsHTML = 	``
-//     searchResults.forEach(function (event) {
+const buildResultsHTML = () => {
+    // console.log(searchResults[0])
+    let resultsHTML = 	``
+    searchResults.forEach(function (event) {
         
         console.log(event.id);
         if (event) {
@@ -15,6 +15,7 @@
         }
        
         console.log(resultsContainer.textContent)
+    })
     
     resultsContainer.innerHTML = 
     `
@@ -27,7 +28,7 @@
     saveButtons.forEach(function(saveButton) {
         saveButton.addEventListener('click', displayItinerary)
     })
-
+}
 
 // Executed by the search click event
 const resultsContainerHTML = () => {
@@ -59,4 +60,4 @@ const renderResults = restaurants => {
     const saveButtons = document.querySelectorAll(".restaurant-save");
 
     addEventToSaveButtons(saveButtons);
-}
+};
