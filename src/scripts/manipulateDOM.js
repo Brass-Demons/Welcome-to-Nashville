@@ -11,11 +11,14 @@ const renderInitialPage = () => {
 	// When the following function is turned into a loop, we will need the following variable to be a parameter.
 	// const searchButtons = document.querySelectorAll('.searchButtons');
 	addEventToSearchButtons();
+	
 };
+
+const resultsContainer = document.querySelector('.container__results');
 
 // Executed when search button is clicked
 const renderResultsContainer = () => {
-	const resultsContainer = document.querySelector('.container__results');
+	
 
 	resultsContainer.innerHTML = resultsContainerHTML();
 	addEventToSaveButtons();

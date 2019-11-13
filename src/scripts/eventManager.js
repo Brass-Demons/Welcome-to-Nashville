@@ -1,25 +1,32 @@
 // Attach event listener to search field buttons, define and call function which fetches data the user searches for, call another function which plugs results into HTML template and display results on the DOM
-// This will be obsolete when the addEventToSearchButtons function is a loop.
+
+const meetupAddEventListener = () => {
+	const meetup__searchButton = document.querySelector('.meetup__searchButton');
+	meetup__searchButton.addEventListener('click', searchEventHandler);
+}
+
 const searchEventHandler = () => {
 	const inputFields = document.querySelectorAll('input');
 
-    inputFields.forEach(function(inputField){
+    inputFields.forEach(function(inputField) {
         console.log(inputField.value)
     })
 
-    getMeetupInfo()
+    API.getMeetupInfo()
     .then(results => {
         searchResults = results.events;
-        buildResultsHTML();
+		buildResultsHTML();
 
-    })
+	})
 }
+
+
 
 // Executed by the renderInitialPage function right after the buttons are put on the DOM within that function.
 // Refactor with a loop.
 const addEventToSearchButtons = () => {
 	const restaurantButton = document.querySelector(".restaurants__searchButton");
-	// const meetup__searchButton = document.querySelector('.meetup__searchButton');
+	
 
 	restaurantButton.addEventListener("click", () => {
 		const input = document.querySelector(".restaurants__input").value;
@@ -30,7 +37,7 @@ const addEventToSearchButtons = () => {
 			.then(results => renderResults(results.restaurants));
 	});
 
-	// meetup__searchButton.addEventListener('click', searchEventHandler);
+	
 };
 
 const addEventToSaveButtons = buttonArr => {
@@ -48,19 +55,16 @@ const searchHandler = () => {
 	console.log("SEARCH VALUE", parkSearchInput);
 	//parkSearch is the function that fetches the data.
   
-	parkSearch(parkSearchInput)
+	API.parkSearch(parkSearchInput)
 	  .then(response => parkDisplay(response))
   }
   
   
-	// const attachEventListenerToSearchButton = () => {
+	const attachEventListenerToSearchButton = () => {
 	  let searchButton = document.querySelector("#parks-search-button")
 	  // console.log(searchButton)
 	  searchButton.addEventListener("click", searchHandler);
-	  //SEARCH RESULTS MANAGER .JS FILE
-	  //I need the park_name, human_address
-	  //human_address IS AN OBJECT. But that is okay, because I can target the thingy 
-	// }
+	};
 
 	
 //Ticketmaster event manager and second .then call

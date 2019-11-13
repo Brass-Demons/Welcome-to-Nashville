@@ -1,5 +1,5 @@
 // Define function for fetch request incorporating variables to allow for user search input
-
+const parksApiBaseUrl = "https://data.nashville.gov/resource/74d7-b74t.json" 
 // This is the max number of results that show up for the search. You can use this variable for your own functions as well if you'd like. It is currently being using for the restaurant results.
 const numOfResults = 4;
 
@@ -27,6 +27,8 @@ const API = {
 			.then(response => response.json());
 	}
 };
+
+// API.getMeetupInfo()
 
 // This was for the Eventbrite fetch call 
 // const meetupBaseUrl = 'https://www.eventbriteapi.com/v3/'

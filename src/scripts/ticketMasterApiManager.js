@@ -1,5 +1,5 @@
 console.log("it works");
-debugger
+// debugger
 const ticketMasterBaseUrl = `https://app.ticketmaster.com/discovery/v2/`;
 
 // initial fetch parsing by genre
